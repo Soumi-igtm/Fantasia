@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController with GetTickerProviderStateMixin {
-  bool isLogin = true;
+  RxBool isLogin = true.obs;
   late Animation<double> containerSize;
   AnimationController? animationController;
   Duration animationDuration = const Duration(milliseconds: 270);
