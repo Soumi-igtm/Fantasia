@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../ui/custom_colors.dart';
+import '../custom_colors.dart';
 import 'input_container.dart';
 
 class RoundedInput extends StatelessWidget {

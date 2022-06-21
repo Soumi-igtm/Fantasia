@@ -1,32 +1,26 @@
-import 'package:fantasia_new/pages/login.dart';
-import 'package:fantasia_new/pages/splash.dart';
-import 'package:fantasia_new/ui/custom_colors.dart';
+import 'ui/custom_colors.dart';
+import 'utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fantasia',
-      theme: ThemeData(
-          primaryColor: kPrimaryColor,
-          textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme)
-      ),
-      routes: {
-        "/": (context) => const Splash(),
-        "/login": (context) => LoginScreen(),
-      },
+      theme: ThemeData(primaryColor: kPrimaryColor, textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme)),
+      defaultTransition: Transition.cupertino,
       initialRoute: "/",
+      getPages: Routes.pages,
     );
   }
 }
-
