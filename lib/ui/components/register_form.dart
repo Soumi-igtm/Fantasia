@@ -38,7 +38,7 @@ class RegisterForm extends StatelessWidget {
                 children: [
                   const SizedBox(height: 10),
                   const Text(
-                    'Welcome',
+                    'Sign Up',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   ),
                   const SizedBox(height: 40),
